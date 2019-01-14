@@ -1,0 +1,26 @@
+{
+  "name": "shortify-api",
+  "version": "1.0.0",
+  "description": "An URL Shortener API similar to bit.ly and goo.gl helpers",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js --exec babel-node --presets babel-preset-env",
+    "node": "node index.js"
+  },
+  "author": "Paulo Ferreira",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.3",
+    "short-id": "0.1.0-1",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.5",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.9"
+  }
+}

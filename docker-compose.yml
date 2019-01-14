@@ -1,0 +1,39 @@
+version: '2'
+services:
+    frontend:
+        build: './frontend'
+        restart: always
+        ports:
+            - "3000:3000"
+        working_dir: /frontend/src/app
+        volumes:
+            - ./frontend:/frontend/src/app
+        links:
+            - webapi
+        networks:
+            - webappnetwork
+    webapi:
+        build: './api'
+        restart: always
+        ports:
+            - '7000:7000'
+        volumes:
+            - ./api:/api/app
+        links:
+            - mongodb
+        networks:
+            - webappnetwork
+    mongodb:
+        image: mongo
+        restart: always
+        container_name: mongodb
+        volumes:
+            - ./data-node:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --noauth --smallfiles
+        networks:
+            - webappnetwork
+networks:
+    webappnetwork:
+        driver: bridge
