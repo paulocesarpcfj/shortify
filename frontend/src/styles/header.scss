@@ -1,0 +1,15 @@
+.header {
+    margin-bottom: 50px;
+    text-align: center;
+
+    > .title {
+        font-size: 50px;
+        font-weight: 600;
+        color: $primary;
+    }
+    
+    > .subtitle {
+        font-style: italic;
+        font-size: 18px;
+    }
+}
